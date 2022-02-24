@@ -4,7 +4,7 @@ import app from "../src/app";
 
 require('mysql2/node_modules/iconv-lite').encodingExists('foo');
 
-jest.setTimeout(30000);
+jest.setTimeout(3000);
 
 const dropDatabase = async () => {
   await connection.execute('DROP SCHEMA IF EXISTS Trybesmith;');
