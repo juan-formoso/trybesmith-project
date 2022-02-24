@@ -17,7 +17,7 @@ const userSchema = Joi.object().keys({
       'number.positive': 'Level must be greater than 0',
       'any.required': 'Level is required',
     }),
-  password: Joi.string().min(7).required().messages({
+  password: Joi.string().min(8).required().messages({
     'string.base': 'Password must be a string',
     'string.min': 'Password must be longer than 7 characters',
     'any.required': 'Password is required',
