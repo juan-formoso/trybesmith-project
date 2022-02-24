@@ -11,3 +11,6 @@ const createUser = async (user: User) => {
 };
 
 export default { createUser };
+
+/* thrown: "Exceeded timeout of 30000 ms for a test.
+    Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test." */

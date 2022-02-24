@@ -4,6 +4,7 @@ import User from '../interfaces/User';
 import Token from '../interfaces/Token';
 import validationJoi from '../middlewares/joiValidation';
 import userSchema from '../middlewares/schemas';
+import 'express-async-errors';
 
 const createUser = async (req: Request, res: Response): Promise<Response> => {
   validationJoi(userSchema, req.body);
