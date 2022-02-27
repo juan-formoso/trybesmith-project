@@ -24,4 +24,15 @@ const userSchema = Joi.object().keys({
   }),
 });
 
-export default userSchema;
+const loginSchema = Joi.object().keys({
+  username: Joi.string().required().messages({
+    'string.base': 'Username must be a string',
+    'any.required': 'Username is required',
+  }),
+  password: Joi.string().required().messages({
+    'string.base': 'Password must be a string',
+    'any.required': 'Password is required',
+  }),
+});
+
+export default { userSchema, loginSchema };
