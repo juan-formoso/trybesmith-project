@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import Joi from 'joi';
 
-const error = (err: unknown, _req: Request, res: Response, _next: NextFunction) => {
+const error = (err: unknown, _req: Request, res: Response, next: NextFunction) => {
   if (Joi.isError(err)) {
     if (err?.details[0].type === 'any.required') {
       return res.status(400).json({
@@ -10,6 +10,7 @@ const error = (err: unknown, _req: Request, res: Response, _next: NextFunction) 
     }
     return res.status(422).json({ error: err.message });
   }
+  next(err);
 };
 
 export default error;
