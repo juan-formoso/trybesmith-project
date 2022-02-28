@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 import Payload from '../interfaces/Payload';
-import 'express-async-errors';
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
   const { authorization } = req.headers;
