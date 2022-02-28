@@ -11,4 +11,4 @@ const createProduct = async (product: Product): Promise<number> => {
   return insertId;
 };
 
-export default createProduct;
+export default { createProduct };
