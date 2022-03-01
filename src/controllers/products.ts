@@ -5,12 +5,11 @@ import validationJoi from '../middlewares/joiValidation';
 import productsServices from '../services/products';
 import 'express-async-errors';
 
-const createProduct = async (req: Request, res: Response): Promise<void> => {
+const createProduct = async (req: Request, res: Response): Promise<Response> => {
   validationJoi(Schemas.productSchema, req.body);
-  const { name, amount } = req.body;
-  const product: Product = { name, amount };
+  const product: Product = req.body;
   const id = await productsServices.createProduct(product);
-  res.status(201).json({ id });
+  return res.status(201).json(id);
 };
 
 export default { createProduct };
