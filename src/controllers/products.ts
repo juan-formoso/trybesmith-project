@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { Product } from '../interfaces/Product';
-import Schemas from '../middlewares/schemas';
 import validationJoi from '../middlewares/joiValidation';
+import Schemas from '../middlewares/schemas';
 import productsServices from '../services/products';
 
 const createProduct = async (req: Request, res: Response): Promise<Response> => {
@@ -11,4 +11,9 @@ const createProduct = async (req: Request, res: Response): Promise<Response> => 
   return res.status(201).json(id);
 };
 
-export default { createProduct };
+const getProducts = async (_req: Request, res: Response) => {
+  const allProducts = await productsServices.getProducts();
+  res.status(200).json(allProducts);
+};
+
+export default { createProduct, getProducts };

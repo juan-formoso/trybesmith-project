@@ -4,6 +4,7 @@ import Login from '../interfaces/Login';
 import Token from '../interfaces/Token';
 import Schemas from '../middlewares/schemas';
 import validationJoi from '../middlewares/joiValidation';
+import 'express-async-errors';
 
 const loginUser = async (req: Request, res: Response): Promise<Response> => {
   validationJoi(Schemas.loginSchema, req.body);
