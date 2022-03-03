@@ -36,15 +36,15 @@ const loginSchema = Joi.object().keys({
 });
 
 const productSchema = Joi.object().keys({
-  name: Joi.string().min(3).required().messages({
+  name: Joi.string().required().min(3).messages({
     'string.base': 'Name must be a string',
-    'string.min': 'Name must be longer than 2 characters',
     'any.required': 'Name is required',
+    'string.min': 'Name must be longer than 2 characters',
   }),
-  amount: Joi.string().min(3).required().messages({
+  amount: Joi.string().required().min(3).messages({
     'string.base': 'Amount must be a string',
-    'string.min': 'Amount must be longer than 2 characters',
     'any.required': 'Amount is required',
+    'string.min': 'Amount must be longer than 2 characters',
   }),
 });
 
