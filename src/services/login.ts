@@ -11,7 +11,7 @@ const loginUser = async (login: Login): Promise<Token> => {
     throw error;
   }
   const secret = process.env.JWT_SECRET || 'any_secret';
-  const token = jwt.sign({ userId: user.id }, secret);
+  const token = jwt.sign({ id: user.id }, secret);
   return { token };
 };
 
